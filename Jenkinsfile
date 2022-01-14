@@ -11,7 +11,7 @@ node {
     
     stage('Clone Repo') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/felipemeriga/DevOps-Example.git'
+      git 'https://github.com/royjoydeep1/DevOps-Example.git'
       // Get the Maven tool.
       // ** NOTE: This 'maven-3.5.2' Maven tool must be configured
       // **       in the global configuration.           
@@ -34,9 +34,9 @@ node {
 		
       echo "Docker Image Tag Name: ${dockerImageTag}"
 	  
-	  sh "docker stop devopsexample"
+	  //sh "docker stop devopsexample"
 	  
-	  sh "docker rm devopsexample"
+	  //sh "docker rm devopsexample"
 	  
 	  sh "docker run --name devopsexample -d -p 2222:2222 devopsexample:${env.BUILD_NUMBER}"
 	  
